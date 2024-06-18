@@ -1,92 +1,29 @@
-export default 
-[
-    {
-        "_id": "A101",
-        "title": "Propulsion Assignment",
-        "course": "RS101",
-        "points": 100,
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A102",
-        "title": "Combustion Analysis",
-        "course": "RS101",
-        "points": 100,
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A103",
-        "title": "Nozzle Design Project",
-        "course": "RS101",
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "points": 100,
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A201",
-        "title": "Aerodynamics Quiz",
-        "course": "RS102",
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "points": 100,
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A202",
-        "title": "Flow Analysis",
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "course": "RS102",
-        "points": 100,
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A203",
-        "title": "Heating Analysis",
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "course": "RS102",
-        "points": 100,
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A301",
-        "title": "Structural Design Task",
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "course": "RS103",
-        "points": 100,
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A302",
-        "title": "Orbital Calculations",
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "course": "RS103",
-        "points": 100,
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    },
-    {
-        "_id": "A303",
-        "title": "Systems Engineering Exam",
-        "description": "The assignment is available online Submit a link to the landing page of your Web application running on Netlify. The landing page should include the following:Your full name and section Links to each of the lab assignments Link to the Kanbas application Links to all relevant source code repositories The Kanbas application should include a link to navigate back to the landing page.",
-
-        "course": "RS103",
-        "points": 100,
-        "due": "2024-05-27",
-        "available": "2024-05-20"
-    }
-]
+export default[
+    { "_id": "A101","points":"90", "title": "Propulsion Assignment", "course": "RS101", "desc":
+    "The assignment is available online Submit a link to the landing page  of your",
+      "due":"2024-05-14T23:59", "ava":"2024-06-05", "until":"2024-06-20"},
+    { "_id": "A102","points":"100", "title": "Combustion Analysis", "course": "RS101" , "desc":
+       "Web application running on Netlify.r",
+       "due":"2024-05-15T23:59", "ava":"2024-06-06", "until":"2024-06-21"},
+    { "_id": "A103","points":"80", "title": "Nozzle Design Project", "course": "RS101", "desc":
+    "Web application running on Netlify.r",
+    "due":"2024-05-16T23:59", "ava":"2024-06-07", "until":"2024-06-22"},
+    { "_id": "A201","points":"97", "title": "Aerodynamics Quiz", "course": "RS102", "desc":
+    "Web application running on Netlify.r",
+    "due":"2024-04-13T23:59", "ava":"2024-06-08", "until":"2024-06-23"},
+    { "_id": "A202", "points":"83","title": "Flow Analysis", "course": "RS102", "desc":
+    "Web application running on Netlify.r",
+    "due":"2024-03-13T23:59", "ava":"2024-06-09", "until":"2024-06-24"},
+    { "_id": "A203","points":"99", "title": "Heating Analysis", "course": "RS102", "desc":
+    "Web application running on Netlify.r",
+    "due":"2024-04-13T23:59", "ava":"2024-07-05", "until":"2024-06-25"},
+    { "_id": "A301","points":"89", "title": "Structural Design Task", "course": "RS103", "desc":
+    "Web application running on Netlify.r",
+    "due":"2024-02-13T23:59", "ava":"2024-08-05", "until":"2024-06-26"},
+    { "_id": "A302","points":"91", "title": "Orbital Calculations", "course": "RS103", "desc":
+    "Web application running on Netlify.r",
+    "due":"2024-01-13T23:59", "ava":"2024-09-05", "until":"2024-06-27"},
+    { "_id": "A303","points":"90", "title": "Systems Engineering Exam", "course": "RS103", "desc":
+    "Web application running on Netlify.r",
+    "due":"2024-06-13T23:59", "ava":"2024-06-10", "until":"2024-06-28"}
+  ]
