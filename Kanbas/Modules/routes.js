@@ -1,8 +1,8 @@
-import * as dao from "./dao.js";
+import * as dao from "./dao.js"; 
+import mongoose from 'mongoose';
 
-function ModuleRoutes(app) {
-
-  const createModule = async (req, res) => {
+export default function ModuleRoutes(app) {
+ const createModule = async (req, res) => {
     const { cid } = req.params;
     console.log(req.body)
     const module = await dao.createModule(cid, req.body);
@@ -11,39 +11,55 @@ function ModuleRoutes(app) {
   }
 
   const deleteModule = async (req, res) => {
-    const status = await dao.deleteModule(req.params.moduleId);
-    console.log(req.params.moduleId, status)
-    res.json(status);
-  }
+    try {
+      const { mid } = req.params;
+      console.log(`Deleting module with ID: ${mid}`);
+      const status = await dao.deleteModule(mid);
+      res.json(status);
+    } catch (error) {
+      console.error(`Error deleting module: ${error.message}`);
+      res.status(500).json({ error: error.message });
+    }
+  };
 
-  const findAllModules = async (req, res) => {
-    const modules = await dao.findAllModules();
-    res.json(modules);
-  }
+  const findAllModulesForCourse = async (req, res) => {
+    try {
+      const { cid } = req.params;
+      console.log(`Finding modules for course ID: ${cid}`);
+      const modules = await dao.findAllModulesbyCourseId(cid);
+      res.json(modules);
+    } catch (error) {
+      console.error(`Error finding modules: ${error.message}`);
+      res.status(500).json({ error: error.message });
+    }
+  };
 
   const findModuleById = async (req, res) => {
-    const module = await dao.findModuleById(req.params.moduleId);
-    res.json(module);
-  }
+    try {
+      const { mid } = req.params;
+      console.log(`Finding module with ID: ${mid}`);
+      const module = await dao.findModuleById(mid);
+      if (module) {
+        res.json(module);
+      } else {
+        res.sendStatus(404);
+      }
+    } catch (error) {
+      console.error(`Error finding module: ${error.message}`);
+      res.status(500).json({ error: error.message });
+    }
+  };
 
-  const updateModule = async (req, res) => {
+   const updateModule = async (req, res) => {
     const { moduleId } = req.params;
     const status = await dao.updateModule(moduleId, req.body);
     res.json(status);
   }
+ 
 
-  const findModuleforCourse = async (req, res) => {
-    const { courseId } = req.params;
-    const modules = await dao.findModuleforCourse(courseId);
-    console.log(modules);
-    res.json(modules);
-  }
-
-  app.post("/api/Courses/:cid/modules", createModule);
-  app.delete("/api/modules/:moduleId", deleteModule);
-  app.get("/api/modules", findAllModules);
-  app.get("/api/modules/:moduleId", findModuleById);
-  app.put("/api/modules/:moduleId", updateModule);
-  app.get("/api/Courses/:courseId/modules", findModuleforCourse);
+  app.post("/api/courses/:cid/modules", createModule);
+  app.get("/api/courses/:cid/modules", findAllModulesForCourse);
+  app.get("/api/modules/:mid", findModuleById);
+  app.put("/api/modules/:mid", updateModule);
+  app.delete("/api/modules/:mid", deleteModule);
 }
-export default ModuleRoutes;

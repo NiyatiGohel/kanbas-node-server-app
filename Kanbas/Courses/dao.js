@@ -1,5 +1,5 @@
 import CourseModel from './model.js';
- 
+
 export const createCourse = async (course) => {
   try {
     return await CourseModel.create(course);
@@ -8,7 +8,7 @@ export const createCourse = async (course) => {
     throw error;
   }
 };
- 
+
 export const deleteCourse = async (courseId) => {
   try {
     return await CourseModel.deleteOne({ _id: courseId });
@@ -17,7 +17,7 @@ export const deleteCourse = async (courseId) => {
     throw error;
   }
 };
- 
+
 export const findAllCourses = async () => {
   try {
     return await CourseModel.find();
@@ -26,7 +26,7 @@ export const findAllCourses = async () => {
     throw error;
   }
 };
- 
+
 export const findCourseById = async (courseId) => {
   try {
     return await CourseModel.findById(courseId);
@@ -35,18 +35,18 @@ export const findCourseById = async (courseId) => {
     throw error;
   }
 };
- 
+
 export const updateCourse = async (courseId, course) => {
   try {
     console.log(`Updating course with ID: ${courseId}`);
     console.log(`Course data: ${JSON.stringify(course)}`);
- 
+
     const existingCourse = await CourseModel.findById(courseId);
     if (!existingCourse) {
       console.log(`Course with ID: ${courseId} not found`);
       return { matchedCount: 0, modifiedCount: 0 };
     }
- 
+
     console.log(`Existing course data: ${JSON.stringify(existingCourse)}`);
     const result = await CourseModel.updateOne({ _id: courseId }, { $set: course });
     console.log(`Update result: ${JSON.stringify(result)}`);
